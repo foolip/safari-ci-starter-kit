@@ -1,9 +1,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
-name: 'macOS Pipeline'
-
 jobs:
-- job: macOS-job
+- job: macOS
   displayName: 'macOS job with spaces'
 
   pool:
