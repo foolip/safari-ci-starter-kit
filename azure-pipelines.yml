@@ -2,7 +2,6 @@
 
 jobs:
 - job: macOS
-  displayName: 'macOS job with spaces'
 
   pool:
     vmImage: 'macOS 10.13'
