@@ -9,6 +9,5 @@ steps:
     /usr/libexec/PlistBuddy -c Print /Applications/Safari.app/Contents/Info.plist
   displayName: 'info'
 
-- script: |
-    sudo echo make me a sandwich
-  displayName: 'sudo'
+- script: ./install.sh
+  displayName: 'Install Safari Technology Preview'
