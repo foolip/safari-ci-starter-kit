@@ -1,5 +1,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
+job: 'Safari macOS'
+
 pool:
   vmImage: 'macOS 10.13'
 
