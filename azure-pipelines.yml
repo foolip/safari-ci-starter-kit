@@ -1,15 +1,16 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
-job: 'Safari macOS'
+jobs:
+- job: 'Safari macOS'
 
-pool:
-  vmImage: 'macOS 10.13'
+  pool:
+    vmImage: 'macOS 10.13'
 
-steps:
-- script: |
-    sw_vers
-    /usr/libexec/PlistBuddy -c Print /Applications/Safari.app/Contents/Info.plist
-  displayName: 'info'
+  steps:
+  - script: |
+      sw_vers
+      /usr/libexec/PlistBuddy -c Print /Applications/Safari.app/Contents/Info.plist
+    displayName: 'info'
 
-- script: ./install.sh
-  displayName: 'Install Safari Technology Preview'
+  - script: ./install.sh
+    displayName: 'Install Safari Technology Preview'
