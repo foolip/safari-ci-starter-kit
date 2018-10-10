@@ -4,8 +4,11 @@ pool:
   vmImage: 'macOS 10.13'
 
 steps:
-- script: sw_vers
+- script: |
+    sw_vers
+    /usr/libexec/PlistBuddy -c Print /Applications/Safari.app/Contents/Info.plist
+  displayName: 'info'
 
 - script: |
-    ls /Applications
     sudo echo make me a sandwich
+  displayName: 'sudo'
