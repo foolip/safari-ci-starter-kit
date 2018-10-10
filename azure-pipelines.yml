@@ -14,13 +14,3 @@ jobs:
 
   - script: ./install.sh
     displayName: 'Install Safari Technology Preview'
-
-- job: Windows
-
-  pool:
-    vmImage: 'VS2017-Win2016'
-
-  steps:
-  - script: |
-      dir
-    displayName: 'Testa testa'
