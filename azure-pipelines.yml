@@ -1,12 +1,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
-jobs:
-- job: macOS
-  displayName: 'macOS job with spaces'
+job: macOS
 
-  pool:
-    vmImage: 'macOS 10.13'
+pool:
+  vmImage: 'macOS 10.13'
 
-  steps:
-  - script: ./install.sh
-    displayName: 'Install Safari Technology Preview'
+steps:
+- script: ./install.sh
+  displayName: 'Install Safari Technology Preview'
