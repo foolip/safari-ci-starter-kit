@@ -5,3 +5,6 @@ jobs:
 
     steps:
       - run: sw_vers
+      - run: pwd
+      - run: ls
+      - run: ./install.sh
