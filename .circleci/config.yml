@@ -5,7 +5,10 @@ jobs:
       xcode: "10.0.0"
 
     steps:
-      - run: sw_vers
-      - run: pwd
-      - run: ls
+      - checkout
       - run: ./install.sh
+      - run: python screenshot.py
+      - run: mkdir /tmp/artifacts
+      - run: mv screenshot.png /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
