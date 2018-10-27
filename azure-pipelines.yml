@@ -1,0 +1,20 @@
+jobs:
+- job: macOS
+
+  pool:
+    vmImage: 'macOS-10.13'
+
+  steps:
+  - script: ./install.sh
+    displayName: 'Install Safari Technology Preview'
+
+  - script: |
+      python screenshot.py
+      mv screenshot.png $(Build.ArtifactStagingDirectory)
+    displayName: 'Take screenshot'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish artifacts'
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'artifacts'
