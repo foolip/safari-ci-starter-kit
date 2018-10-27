@@ -8,4 +8,4 @@ sudo "/Applications/Safari Technology Preview.app/Contents/MacOS/safaridriver" -
 
 # Selenium Python Bindings
 sudo easy_install pip
-pip install selenium
+sudo pip install selenium
