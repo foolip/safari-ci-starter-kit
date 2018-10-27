@@ -1,0 +1,9 @@
+osx_instance:
+  image: high-sierra-base
+
+task:
+  install_script:
+    - ./install.sh
+  script:
+    - python screenshot.py
+  # no deploy step
