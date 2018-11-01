@@ -1,5 +1,5 @@
 osx_instance:
-  image: mojave-base
+  image: high-sierra-base
 
 task:
   install_script:
