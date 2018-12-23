@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Print debug info
+sw_vers
+echo "Safari: $(PlistBuddy -c 'Print :CFBundleShortVersionString' /Applications/Safari.app/Contents/Info.plist)"
+
 # Safari Technology Preview
 export HOMEBREW_NO_AUTO_UPDATE=1
 # This is equivalent to `Homebrew/homebrew-cask-versions/safari-technology-preview`,
