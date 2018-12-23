@@ -3,7 +3,9 @@ set -e
 
 # Safari Technology Preview
 export HOMEBREW_NO_AUTO_UPDATE=1
-brew cask install Homebrew/homebrew-cask-versions/safari-technology-preview
+# This is equivalent to `Homebrew/homebrew-cask-versions/safari-technology-preview`,
+# but the raw URL is used to bypass caching.
+brew cask install https://raw.githubusercontent.com/Homebrew/homebrew-cask-versions/master/Casks/safari-technology-preview.rb
 sudo "/Applications/Safari Technology Preview.app/Contents/MacOS/safaridriver" --enable
 
 # Selenium Python Bindings
