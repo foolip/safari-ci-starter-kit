@@ -3,7 +3,7 @@ set -e
 
 # Print debug info
 sw_vers
-echo "Safari: $(PlistBuddy -c 'Print :CFBundleShortVersionString' /Applications/Safari.app/Contents/Info.plist)"
+echo "Safari: $(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' /Applications/Safari.app/Contents/Info.plist)"
 
 # Safari Technology Preview
 export HOMEBREW_NO_AUTO_UPDATE=1
