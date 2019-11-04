@@ -5,7 +5,7 @@ jobs:
     vmImage: macOS-10.14
 
   steps:
-  - script: sudo xcode-select -s /Applications/Xcode_11.1.app/Contents/Developer
+  - script: sudo xcode-select -s /Applications/Xcode_11.2.app/Contents/Developer
     displayName: xcode-select
 
   - script: pip install --user selenium
