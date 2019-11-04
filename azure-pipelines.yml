@@ -8,16 +8,11 @@ jobs:
   - script: sudo xcode-select -s /Applications/Xcode_11.2.app/Contents/Developer
     displayName: xcode-select
 
-  - script: pip install --user selenium
-    displayName: Install dependencies
-
   - script: screencapture $(Build.ArtifactStagingDirectory)/screencapture-before.png
     displayName: screencapture-before
 
-  - script: |
-      python screenshot.py
-      mv screenshot.png $(Build.ArtifactStagingDirectory)
-    displayName: Take screenshot
+  - script: ./screenshot.sh $(Build.ArtifactStagingDirectory)/screenshot.png
+    displayName: screenshot
 
   - script: screencapture $(Build.ArtifactStagingDirectory)/screencapture-after.png
     displayName: screencapture-after
