@@ -12,11 +12,10 @@ jobs:
     displayName: Install dependencies
 
   - script: |
-      screencapture -V 60 screencapture.mov & PID=$!
+      screencapture $(Build.ArtifactStagingDirectory)/screencapture-before.png
       python screenshot.py
       mv screenshot.png $(Build.ArtifactStagingDirectory)
-      lsof -p $PID +r 1 >/dev/null
-      mv screencapture.mov $(Build.ArtifactStagingDirectory)
+      screencapture $(Build.ArtifactStagingDirectory)/screencapture-after.png
     displayName: Take screenshot
 
   - task: PublishBuildArtifacts@1
