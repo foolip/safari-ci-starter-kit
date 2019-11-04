@@ -1,16 +1,22 @@
 jobs:
-- job: macOS
+- job: iOS
 
   pool:
     vmImage: macOS-10.14
 
   steps:
-  - script: ./install.sh
-    displayName: Install Safari Technology Preview
+  - script: sudo xcode-select -s /Applications/Xcode_11.1.app/Contents/Developer
+    displayName: xcode-select
+
+  - script: pip install --user selenium
+    displayName: Install dependencies
 
   - script: |
+      screencapture -V 60 screencapture.mov & PID=$!
       python screenshot.py
       mv screenshot.png $(Build.ArtifactStagingDirectory)
+      lsof -p $PID +r 1 >/dev/null
+      mv screencapture.mov $(Build.ArtifactStagingDirectory)
     displayName: Take screenshot
 
   - task: PublishBuildArtifacts@1
