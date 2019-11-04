@@ -11,12 +11,16 @@ jobs:
   - script: pip install --user selenium
     displayName: Install dependencies
 
+  - script: screencapture $(Build.ArtifactStagingDirectory)/screencapture-before.png
+    displayName: screencapture-before
+
   - script: |
-      screencapture $(Build.ArtifactStagingDirectory)/screencapture-before.png
       python screenshot.py
       mv screenshot.png $(Build.ArtifactStagingDirectory)
-      screencapture $(Build.ArtifactStagingDirectory)/screencapture-after.png
     displayName: Take screenshot
+
+  - script: screencapture $(Build.ArtifactStagingDirectory)/screencapture-after.png
+    displayName: screencapture-after
 
   - task: PublishBuildArtifacts@1
     displayName: Publish artifacts
