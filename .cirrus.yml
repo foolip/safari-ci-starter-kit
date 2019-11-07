@@ -1,5 +1,5 @@
 osx_instance:
-  image: mojave-base
+  image: catalina-base
 
 task:
   install_script:
